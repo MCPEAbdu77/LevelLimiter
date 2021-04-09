@@ -1,0 +1,14 @@
+# LevelLimiter by MCA7#1245
+# Usage =>
+#
+#  warp:             (This is the command)
+#   - "worldname1"   (This is the name of the world which this cmd works on)
+#   - "worldname2"   ( "" aka 'whitelisted' worlds)
+
+command1:
+  - "world"
+  - "world2"
+command2:
+  - "world3"
+  - "world4"
+
