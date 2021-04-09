@@ -2,6 +2,6 @@
 name: LevelLimiter
 version: 1.0.0
 main: MCA7\LevelLimiter\Main
-api: 3.18.1
+api: 3.19.0
 author: MCA7
 ...
