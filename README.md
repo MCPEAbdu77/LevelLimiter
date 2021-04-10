@@ -8,6 +8,9 @@ Set up the commands and the whitelisted world(s) on which the specific command w
      - "world2"
  - command2:
      - "world3"
+ 
+# Permission
+ Operators will be able to bypass this restriction by default. Users with `level.bypass` can bypass this restriction.
 
 # Contact
  - Email: abdu77mcpe@gmail.com
