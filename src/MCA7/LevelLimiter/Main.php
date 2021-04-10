@@ -23,16 +23,16 @@ class Main extends PluginBase implements Listener {
     $sender = $event->getSender();
     $cmd = $event->getCommand();
   	if($sender instanceof Player) {
-  		$con = $this->getConfig()->getAll();
-
-  		if (isset($con[$cmd])) {
-  			if (!in_array($sender->getLevel()->getName(), $this->getConfig()->get($cmd))) {
-  				$sender->sendMessage(C::DARK_RED. C::BOLD . "LevelLimiter :" .C::RED . " This command is disabled on this world!");
-  				$event->setCancelled();
-  				return true;
-  			}
-  		}
-  	}
-
+      if(!$sender->hasPermission("level.bypass")) {
+  		    $con = $this->getConfig()->getAll();
+          if (isset($con[$cmd])) {
+            if (!in_array($sender->getLevel()->getName(), $this->getConfig()->get($cmd))) {
+              $sender->sendMessage(C::DARK_RED. C::BOLD . "LevelLimiter :" .C::RED . " This command is disabled on this world!");
+              $event->setCancelled();
+              return true;
+            }
+          }
+      }
+    }
   }
 }
