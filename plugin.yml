@@ -6,7 +6,7 @@ api: 3.19.0
 author: MCA7
 
 permissions:
-    level.bypass:
+    levellimiter.bypass:
         description: "Allows the user to bypass level retriction"
         default: op
 ...
