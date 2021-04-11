@@ -1,4 +1,6 @@
 # LevelLimiter
+<a href="https://poggit.pmmp.io/p/LevelLimiter"><img src="https://poggit.pmmp.io/shield.state/LevelLimiter"></a>
+
 A PocketMine-MP plugin which let's you whitelist specific commands on specific worlds.
 
 # Config.yml 
