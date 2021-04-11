@@ -10,7 +10,7 @@ Set up the commands and the whitelisted world(s) on which the specific command w
      - "world3"
  
 # Permission
- Operators will be able to bypass this restriction by default. Users with `level.bypass` can bypass this restriction.
+ Operators will be able to bypass this restriction by default. Users with `levellimiter.bypass` can bypass this restriction.
 
 # Contact
  - Email: abdu77mcpe@gmail.com
