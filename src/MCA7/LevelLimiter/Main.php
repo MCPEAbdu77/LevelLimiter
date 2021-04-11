@@ -23,7 +23,7 @@ class Main extends PluginBase implements Listener {
     $sender = $event->getSender();
     $cmd = $event->getCommand();
   	if($sender instanceof Player) {
-      if(!$sender->hasPermission("level.bypass")) {
+      if(!$sender->hasPermission("levellimiter.bypass")) {
   		    $con = $this->getConfig()->getAll();
           if (isset($con[$cmd])) {
             if (!in_array($sender->getLevel()->getName(), $this->getConfig()->get($cmd))) {
