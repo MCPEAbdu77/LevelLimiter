@@ -11,8 +11,18 @@ Set up the commands and the whitelisted world(s) on which the specific command w
  - command2:
      - "world3"
  
-# Permission
+# Permissions
  Operators will be able to bypass this restriction by default. Users with `levellimiter.bypass` can bypass this restriction.
+ If you want to grant access to a group/user to bypass the restriction on a specific world, add `levellimiter.bypass.<world>`.
+ 
+ `<world>` denotes the world name. 
+ 
+ Example: 
+  - `levellimiter.bypass.flat` grants the user/group to bypass restrictions on `flat` world.
+ 
+ If you want to grant access to a group/user a specific command on a specific world, add `levellimiter.bypass.<world>.<command>`.
+ Example:
+  - `levellimiter.bypass.flat.pay` grants the user/group to use the `/pay` command on `flat` world.
 
 # Contact
  - Email: abdu77mcpe@gmail.com
