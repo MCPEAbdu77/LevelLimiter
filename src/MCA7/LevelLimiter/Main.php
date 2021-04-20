@@ -8,7 +8,7 @@ namespace MCA7\LevelLimiter;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat as C;
-use pocketmine\{event\server\CommandEvent, Player};
+use pocketmine\{event\player\PlayerCommandPreprocessEvent, Player};
 use pocketmine\event\Listener;
 
 class Main extends PluginBase implements Listener {
@@ -19,24 +19,27 @@ class Main extends PluginBase implements Listener {
     $this->saveDefaultConfig();
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
   }
-  public function onCMD(CommandEvent $event) {
-    $sender = $event->getSender();
-    $cmd = $event->getCommand();
+  public function onCMD(PlayerCommandPreprocessEvent $event) {
+    $sender = $event->getPlayer();
+    $cmd = $event->getMessage();
   	if($sender instanceof Player) {
-		if (!$sender->hasPermission("levellimiter.bypass")) {
-			if (!$sender->hasPermission("levellimiter.bypass." . $sender->getLevel()->getName())) {
-				if (!$sender->hasPermission("levellimiter.bypass." . $sender->getLevel()->getName() . "." . $cmd)) {
-					$con = $this->getConfig()->getAll();
-					if (isset($con[$cmd])) {
-						if (!in_array($sender->getLevel()->getName(), $this->getConfig()->get($cmd))) {
-							$sender->sendMessage(C::DARK_RED . C::BOLD . "LevelLimiter :" . C::RESET . C::RED . " This command is disabled on this world!");
-							$event->setCancelled();
-							return true;
+		if($cmd[0] == "/") {
+			if (!$sender->hasPermission("levellimiter.bypass")) {
+				if (!$sender->hasPermission("levellimiter.bypass." . $sender->getLevel()->getName())) {
+					$cmdo = trim($cmd, "/");
+					if (!$sender->hasPermission("levellimiter.bypass." . $sender->getLevel()->getName() . "." . $cmdo)) {
+						$con = $this->getConfig()->getAll();
+						if (isset($con[$cmdo])) {
+							if (!in_array($sender->getLevel()->getName(), $this->getConfig()->get($cmdo))) {
+								$sender->sendMessage(C::DARK_RED . C::BOLD . "LevelLimiter :" . C::RESET . C::RED . " This command is disabled on this world!");
+								$event->setCancelled();
+								return true;
+							}
 						}
 					}
-				}
-			  }
+			  	}
 			}
 		}
 	}
+  }
 }
