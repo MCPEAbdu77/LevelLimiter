@@ -16,13 +16,13 @@ class Main extends PluginBase implements Listener {
   public function onEnable() {
     @mkdir($this->getDataFolder());
     $this->saveDefaultConfig();
-    $prefix = $this->getConfig()->get("prefix");
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
   }
 
   public function onCMD(PlayerCommandPreprocessEvent $event) {
     $sender = $event->getPlayer();
     $cmd = $event->getMessage();
+    $prefix = $this->getConfig()->get("prefix");
   	if(get_class($sender) == "pocketmine\Player") {
 		if($cmd[0] == "/") {
 			if (!$sender->hasPermission("levellimiter.bypass")) {
