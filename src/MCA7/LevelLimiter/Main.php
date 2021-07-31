@@ -20,7 +20,7 @@ class Main extends PluginBase implements Listener {
   }
 	
   /**
-   * @priority HIGH
+   * @priority MONITOR
    */
 
   public function onCMD(PlayerCommandPreprocessEvent $event) {
