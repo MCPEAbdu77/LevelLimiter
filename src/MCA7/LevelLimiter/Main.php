@@ -13,11 +13,10 @@ use pocketmine\event\Listener;
 
 class Main extends PluginBase implements Listener {
 
-  const PREFIX = $this->getConfig()->get("prefix");
-
   public function onEnable() {
     @mkdir($this->getDataFolder());
     $this->saveDefaultConfig();
+    $prefix = $this->getConfig()->get("prefix");
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
   }
 
@@ -33,7 +32,7 @@ class Main extends PluginBase implements Listener {
 						$con = $this->getConfig()->getAll();
 						if (isset($con[explode(" ",$cmdo)[0]])) {
 							if (!in_array($sender->getLevel()->getName(), $this->getConfig()->get( explode(" ",$cmdo)[0] ))) {
-								$sender->sendMessage(Main::PREFIX . C::RESET . C::RED . " This command is disabled on this world!");
+								$sender->sendMessage($prefix . C::RESET . C::RED . " This command is disabled on this world!");
 								$event->setCancelled();
 								return true;
 							}
