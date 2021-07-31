@@ -9,6 +9,11 @@
 #| |___  | | | | | | | | | | | |_  |  __/ | |    
 #|_____| |_| |_| |_| |_| |_|  \__|  \___| |_|
 
+# Change prefix according to your needs, 
+# please use "§" for colour coding.
+
+prefix: "§l§4LevelLimiter§r:"
+
 # Usage =>
 #
 #  warp:             (This is the command)
