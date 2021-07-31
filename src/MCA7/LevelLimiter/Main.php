@@ -18,6 +18,10 @@ class Main extends PluginBase implements Listener {
     $this->saveDefaultConfig();
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
   }
+	
+  /**
+   * @priority HIGH
+   */
 
   public function onCMD(PlayerCommandPreprocessEvent $event) {
     $sender = $event->getPlayer();
