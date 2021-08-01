@@ -13,6 +13,7 @@
 # please use "§" for colour coding.
 
 prefix: "§l§4LevelLimiter§r:"
+blocked-message: "§cThis command is disabled in this world§e!"
 
 # Usage =>
 #
