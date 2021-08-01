@@ -37,7 +37,7 @@ class Main extends PluginBase implements Listener {
 						if (isset($con[explode(" ",$cmdo)[0]])) {
 							if (!in_array($sender->getLevel()->getName(), $this->getConfig()->get( explode(" ",$cmdo)[0] ))) {
 								$sender->sendMessage($prefix . C::RESET . C::RED . " This command is disabled on this world!");
-								$event->setCancelled();
+								$event->setCancelled(true);
 								return true;
 							}
 						}
