@@ -19,14 +19,12 @@ class Main extends PluginBase implements Listener {
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
   }
 	
-  /**
-   * @priority MONITOR
-   */
 
   public function onCMD(PlayerCommandPreprocessEvent $event) {
     $sender = $event->getPlayer();
     $cmd = $event->getMessage();
     $prefix = $this->getConfig()->get("prefix");
+    $msg = $this->getConfig()->get("blocked-message");
   	if(get_class($sender) == "pocketmine\Player") {
 		if($cmd[0] == "/") {
 			if (!$sender->hasPermission("levellimiter.bypass")) {
@@ -36,8 +34,8 @@ class Main extends PluginBase implements Listener {
 						$con = $this->getConfig()->getAll();
 						if (isset($con[explode(" ",$cmdo)[0]])) {
 							if (!in_array($sender->getLevel()->getName(), $this->getConfig()->get( explode(" ",$cmdo)[0] ))) {
-								$sender->sendMessage($prefix . C::RESET . C::RED . " This command is disabled on this world!");
-								$event->setCancelled(true);
+								$sender->sendMessage($prefix . C::RESET . " " . $msg);
+								$event->setCancelled();
 								return true;
 							}
 						}
