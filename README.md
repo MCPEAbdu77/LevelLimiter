@@ -25,6 +25,5 @@ Set up the commands and the whitelisted world(s) on which the specific command w
   - `levellimiter.bypass.flat.pay` grants the user/group to use the `/pay` command on `flat` world.
 
 # Contact
- - Email: abdu77mcpe@gmail.com
+
  - Discord: MCA7#1245
- - Paypal: https://paypal.me/abdu77
