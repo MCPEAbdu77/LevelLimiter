@@ -35,7 +35,7 @@ class Main extends PluginBase implements Listener {
 							if (!in_array($sender->getWorld()->getFolderName(), $this->getConfig()->get( explode(" ",$cmdo)[0] ))) {
 								$sender->sendMessage($prefix . C::RESET . " " . $msg);
 								$event->cancel();
-								return true;
+								return;
 							}
 						}
 					}
