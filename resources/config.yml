@@ -1,13 +1,25 @@
-# _                             _  
-#| |       ___  __   __   ___  | | 
-#| |      / _ \ \ \ / /  / _ \ | | 
-#| |___  |  __/  \ V /  |  __/ | | 
-#|_____|  \___|   \_/    \___| |_| 
-# _       _               _   _                  
-#| |     (_)  _ __ ___   (_) | |_    ___   _ __  
-#| |     | | | '_ ` _ \  | | | __|  / _ \ | '__| 
-#| |___  | | | | | | | | | | | |_  |  __/ | |    
-#|_____| |_| |_| |_| |_| |_|  \__|  \___| |_|
+#  _                             _  
+# | |       ___  __   __   ___  | | 
+# | |      / _ \ \ \ / /  / _ \ | | 
+# | |___  |  __/  \ V /  |  __/ | | 
+# |_____|  \___|   \_/    \___| |_| 
+#  _       _               _   _                  
+# | |     (_)  _ __ ___   (_) | |_    ___   _ __  
+# | |     | | | '_ ` _ \  | | | __|  / _ \ | '__| 
+# | |___  | | | | | | | | | | | |_  |  __/ | |    
+# |_____| |_| |_| |_| |_| |_|  \__|  \___| |_|
+#
+# Author: MCA7
+# Website: https://www.github.com/MCPEAbdu77/LevelLimiter
+# Apache-2.0 (C) 2022
+
+# Don't change this!
+ver: 1.0
+
+# Mode 
+# whitelist - the command only works on the worlds you add
+# blacklist - the command works on all worlds except the ones you add
+mode: "whitelist"
 
 # Change prefix according to your needs, 
 # please use "§" for colour coding.
@@ -18,8 +30,8 @@ blocked-message: "§cThis command is disabled in this world§e!"
 # Usage =>
 #
 #  warp:             (This is the command)
-#   - "worldname1"   (This is the name of the world which this cmd works on)
-#   - "worldname2"   ( "" aka 'whitelisted' worlds)
+#   - "worldname1"   (This is the name of the world which this cmd works/don't work on (depends on the mode))
+#   - "worldname2"   ( "" aka whitelisted/blacklisted worlds)
 # NOTE: World Names are CASE SENSITIVE!!
 
 command1:

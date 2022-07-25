@@ -1,9 +1,10 @@
 ---
 name: LevelLimiter
-version: 2.1.0
+version: 2.1.1
 main: MCA7\LevelLimiter\Main
 api: 4.0.0
 author: MCA7
+website: https://www.github.com/MCPEAbdu77/LevelLimiter
 
 permissions:
     levellimiter.bypass:
