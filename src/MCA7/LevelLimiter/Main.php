@@ -8,7 +8,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat as C;
 use pocketmine\{event\Player, 
-	event\player\PlayerCommandPreprocessEvent};
+    event\player\PlayerCommandPreprocessEvent};
 use pocketmine\event\Listener;
 
 
@@ -36,7 +36,7 @@ class Main extends PluginBase implements Listener
   public function onCMD(PlayerCommandPreprocessEvent $event) : void 
   {
 
-	$sender = $event->getPlayer();
+    $sender = $event->getPlayer();
     $cmd = $event->getMessage();
     $prefix = $this->getConfig()->get("prefix");
     $msg = $this->getConfig()->get("blocked-message");
