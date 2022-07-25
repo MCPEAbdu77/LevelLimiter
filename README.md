@@ -1,10 +1,10 @@
 # LevelLimiter
 <a href="https://poggit.pmmp.io/p/LevelLimiter"><img src="https://poggit.pmmp.io/shield.state/LevelLimiter"></a>
 
-A PocketMine-MP plugin which let's you whitelist specific commands on specific worlds.
+A PocketMine-MP plugin which let's you whitelist/blacklist specific commands on specific worlds.
 
 # Config.yml 
-Set up the commands and the whitelisted world(s) on which the specific command will work on.
+Set up the commands and the whitelisted/blacklisted world(s) on which the specific command will work/not work on.
  - command1:
      - "world1"
      - "world2"
