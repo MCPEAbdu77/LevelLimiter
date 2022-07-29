@@ -43,22 +43,31 @@ class Main extends PluginBase implements Listener
   	if(get_class($sender) !== "pocketmine\player\Player") return;
 	if($cmd[0] !== "/") return;
 	$cmdo = trim($cmd, "/");
+	$command = explode(" ",$cmdo)[0];
 	if($sender->hasPermission("levellimiter.bypass") 
 	|| $sender->hasPermission("levellimiter.bypass." . $sender->getWorld()->getFolderName()) 
-	|| $sender->hasPermission("levellimiter.bypass." . $sender->getWorld()->getFolderName() . "." . explode(" ",$cmdo)[0])) return;
+	|| $sender->hasPermission("levellimiter.bypass." . $sender->getWorld()->getFolderName() . "." . $command)) return;
 	$con = $this->getConfig()->getAll();
-	if(isset($con[explode(" ",$cmdo)[0]])) {
+	if(isset($con[$command])) {
 		if($this->getConfig()->get('mode') === 'blacklist') goto BlacklistMode;
-		if(!in_array($sender->getWorld()->getFolderName(), $this->getConfig()->get(explode(" ",$cmdo)[0]))) {
+		if(!(is_array($this->getConfig()->get($command)))) goto WhitelistNonArrayException;
+		if(!in_array($sender->getWorld()->getFolderName(), $this->getConfig()->get($command))) {
 			Cancel:
 				$sender->sendMessage($prefix . C::RESET . " " . $msg);
 				$event->cancel();
 				return;
 			}
-		}
-		BlacklistMode:
-			if(in_array($sender->getWorld()->getFolderName(), $this->getConfig()->get(explode(" ",$cmdo)[0]))) goto Cancel;			
-			return;		
+			BlacklistMode:
+			if(is_array($this->getConfig()->get($command))) { continue; } else { goto NonArrayException; }
+				if(in_array($sender->getWorld()->getFolderName(), $this->getConfig()->get($command))) goto Cancel;			
+				return;
+				BlacklistNonArrayException:
+				if($sender->getWorld()->getFolderName() === $this->getConfig()->get($command)) goto Cancel;
+				return;
+				WhitelistNonArrayException:
+				if($sender->getWorld()->getFolderName() !== $this->getConfig()->get($command)) goto Cancel;
+				return;
+		}		
 				
   	}
 
