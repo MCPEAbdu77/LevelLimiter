@@ -58,7 +58,7 @@ class Main extends PluginBase implements Listener
 				return;
 			}
 			BlacklistMode:
-			if(is_array($this->getConfig()->get($command))) { continue; } else { goto NonArrayException; }
+			if(!(is_array($this->getConfig()->get($command))))  goto NonArrayException;
 				if(in_array($sender->getWorld()->getFolderName(), $this->getConfig()->get($command))) goto Cancel;			
 				return;
 				BlacklistNonArrayException:
