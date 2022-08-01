@@ -2,7 +2,7 @@
 name: LevelLimiter
 version: 2.1.2
 main: MCA7\LevelLimiter\Main
-api: 4.0.0
+api: [ 4.0.0, 5.0.0 ]
 author: MCA7
 website: https://www.github.com/MCPEAbdu77/LevelLimiter
 
